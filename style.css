@@ -1,0 +1,53 @@
+h1{
+    font-size:40; 
+    color: rgb(20, 200, 255);
+    font-family:"Trajan";
+    text-align: center
+    
+}
+
+@font-face{
+    font-family: "Trajan";
+    src: url('TrajanPro-Regular.ttf')
+}
+
+.search-control {
+    position: absolute;
+    height: 300px;
+    width: 500px;
+    width: 100%;
+    
+}
+    
+    
+    .search-control input{
+    height:30px;
+    width:230px;
+    background-color: white;
+    opacity: .9;
+    margin: 0 auto;
+    
+    
+    border-color:purple;
+    font-family: "WalkwayyB";
+    
+    
+    }
+    
+    @font-face{
+    font-family: "WalkwayyB";
+    src: url('walkwayyB.ttf');
+
+    }
+
+    .navBar{
+        border:solid;
+        border-color: orange;
+        justify-content: space-around;
+        align-content: center;
+        display: flex;
+        font-size:1.1em;
+        text-decoration: none;
+        color:black;
+        background-color: orange;
+    }
