@@ -42,7 +42,7 @@ h1{
 
     .navBar{
         border:solid;
-        border-color: orange;
+        border-color:rgb(20, 200, 255);
         justify-content: space-around;
         align-content: center;
         display: flex;
