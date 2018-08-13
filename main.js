@@ -4,3 +4,4 @@ let restaurant = {
     Hours : "string",
     Review : "string",
 };
+
