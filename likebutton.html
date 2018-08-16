@@ -1,0 +1,69 @@
+<html>
+	<head>
+		<title>Like/Dislike</title>
+	</head>
+	
+ 		<style type="text/css">
+ 	body{
+ 		min-width: 100%;
+ 		text-align: center;
+ 	}		
+ 	#all{
+ 		width: 100%;
+ 		margin: 0 auto;
+ 	}
+
+	#likes{
+		height:5px;
+		width: 50%;
+		background: skyblue;
+		float: left;  
+	}
+	#dislikes{
+		height:5px;
+		width: 50%;
+		background: orange;
+		float: right;  
+	}
+
+ 	#bar{
+ 		margin: 0 auto;
+ 		width: 60%;
+ 	}	
+ 	</style>	
+ 	<body>		
+ 		<div id="all">
+ 				<div id="bar">
+ 					<div id="likes"></div>
+ 					<div id="dislikes"></div>
+ 				</div>
+ 				<input type="button" value="Like" onclick="like();"/>
+ 				<input type="button" value="Dislike" onclick="dislike();"/>
+
+			</div> 
+	</body>
+
+	<script type="text/javascript">
+	var likes=0, dislikes=0;
+	function like(){
+		likes++;
+		calculateBar();
+	}
+	function dislike(){
+		dislikes++;
+		calculateBar();
+	}
+
+	function calculateBar(){
+		var total= likes+dislikes;
+		var percentageLikes=(likes/total)*100;
+		var percentageDislikes=(dislikes/total)*100;
+		
+		document.getElementById('likes').style.width=percentageLikes.toString()+"%";
+		document.getElementById('dislikes').style.width=percentageDislikes.toString()+"%";
+
+	}
+
+calculateBar();
+	</script>
+</html>

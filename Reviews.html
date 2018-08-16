@@ -1,42 +1,97 @@
 <!DOCTYPE html>
 <html>
-<head>
     <head>
         <script src="main.js"></script>
         <link rel="stylesheet" type="text/css" href="./style.css">
-</head>
+    </head>
 
-<body>
-        <div class="navBar">
+
+    <div class="navBar">
         <a href="index.html">Home</a>
              <a href="Popular.html">Popular</a>
-            <a href="Submit a review.html">Reviews</a>
+            <a href="Reviews.html">Reviews</a>
              <a href="about.html">About</a>
-             <a href="Favorites.html">Favorites</a>
-             <a href="Reviews.html">Reviews</a>
-        </div>
-
-        <form role="search">
-            <div class="search-control">
-                <input type="search" id="site-search" name="searched"
-                       placeholder="Search the site..."
-                       aria-label="Search through site content">
-                <button>Go!</button>
-            </div>
-        </form>
-
-        <h1>
-            Reviews
-        </h1>
-        
-<div class="comments">
-              <form action="onclick()">
-                  Comments:
-                  <input type="text" id="comment"></input>
-                  <input type ="submit"></input>
-              </form>
-
-              </form>
-            </div>
-       
+             <a href="restaraunts.html">Restaraunts</a>
             
+    </div>
+
+    
+    <form role="search">
+        <div class="search-control">
+            <input type="search" id="site-search" name="searched"
+                    placeholder="Search the site..."
+                    aria-label="Search through site content"/>
+            <button>Go!</button>
+        </div>
+    </form>
+
+    <h1>
+        Reviews
+    </h1>
+<body>		<div id="all">
+    <div id="bar">
+        <div id="likes"></div>
+        <div id="dislikes"></div>
+    </div>
+    <input type="button" value="Like" onclick="like();"/>
+    <input type="button" value="Dislike" onclick="dislike();"/>
+
+</div> </body>
+    <div class="comments">
+            
+            <input type="text" id="comment">
+            <input type ="submit" onclick="submitButton()"/>
+    </div>
+    <style type="text/css">
+        body{
+            min-width: 100%;
+            text-align: center;
+        }		
+        #all{
+            width: 100%;
+            margin: 0 auto;
+        }
+   
+       #likes{
+           height:5px;
+           width: 50%;
+           background: skyblue;
+           float: left;  
+       }
+       #dislikes{
+           height:5px;
+           width: 50%;
+           background: orange;
+           float: right;  
+       }
+   
+        #bar{
+            margin: 0 auto;
+            width: 60%;
+        }	
+        </style>
+
+<script type="text/javascript">
+var likes=0, dislikes=0;
+function like(){
+likes++;
+calculateBar();
+}
+function dislike(){
+dislikes++;
+calculateBar();
+}
+
+function calculateBar(){
+var total= likes+dislikes;
+var percentageLikes=(likes/total)*100;
+var percentageDislikes=(dislikes/total)*100;
+
+document.getElementById('likes').style.width=percentageLikes.toString()+"%";
+document.getElementById('dislikes').style.width=percentageDislikes.toString()+"%";
+
+}
+
+calculateBar();
+</script>
+</html>
